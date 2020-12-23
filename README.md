@@ -9,3 +9,6 @@
 
 ### 파일
 - f.readline()
+
+### 반복문
+- enumerate : index 사용가능
