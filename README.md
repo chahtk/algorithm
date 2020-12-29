@@ -29,6 +29,9 @@ b[1][1] = 7
 print(a,b) # a: [[1, 2], [3, 4, 5]], b: [[1, 2], [3, 7]]
 ```
 
+### 문자열
+- slice : arr[start:end], arr[:]로 deep copy 가능!
+- strip : 특정 문자를 양쪽에서 제거. lstrip, rstrip은 각각 좌, 우에 대해 삭제
 
 ### 반복문
 - enumerate : index 사용가능
