@@ -35,3 +35,17 @@ print(a,b) # a: [[1, 2], [3, 4, 5]], b: [[1, 2], [3, 7]]
 
 ### 반복문
 - enumerate : index 사용가능
+
+### 정렬(sort)
+- list.sort()
+- sorted(iterable)
+- 내림차순: 위 함수 옵션으로 reverse=True를 주면됨
+- 에를들어 리스트의 값들이 튜플/리스트... 등 원시값이 아닐 때, 다음과 같이 정렬을 정의할 수 있음
+```python
+somList = [ (1,2), (2,3), (3,3)]
+someList.sort(key=lambda t:t[0]) # 0번째 기준으로
+```
+
+### 람다식
+- lambda 'parameter': express
+- ex) lambda x,y: x+y
