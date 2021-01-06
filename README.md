@@ -1,9 +1,26 @@
 # algorithm
-알고리즘 공부
+알고리즘 공부 (python, javascript)
 
-## 입출력
+## JS
 
-### 프롬프트
+### 프롬프트 입출력
+```js
+const readline = require('readline');
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+rl.on('line', (line) => {
+  input = line;
+  rl.close();
+}).on('close', () => {
+  process.exit();
+})
+```
+
+## Python
+
+### 프롬프트 입출력
 - input()
 - sys.stdin.readline()
 
