@@ -10,6 +10,7 @@ module.exports = {
   extends: ["airbnb-base", "plugin:prettier/recommended"],
   rules: {
     "no-console": 0,
+    "array-callback-return": 0,
     "linebreak-style": ["error", OS.EOL === "\r\n" ? "windows" : "unix"],
     "prettier/prettier": ["error", { endOfLine: "auto" }],
   },
