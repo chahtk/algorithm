@@ -1,70 +1,36 @@
 const readline = require("readline");
 
-const getFloat = (num) => {
-  return +num.toFixed(5).toString();
+const gcd = (a, b) => {
+  return a % b ? gcd(b, a % b) : b;
 };
 
-const uclid = (a, b) => {
-  if (a === b) return a;
-  let r = 0;
-  let big = a > b ? a : b;
-  let small = a < b ? a : b;
-  while (true) {
-    r = getFloat(big % small);
-    if (r === 0) break;
-    big = small;
-    small = r;
-  }
-  return small;
-};
-
-const getAngles = (angle) => {
-  const cnt = getFloat(360 / angle);
-  const arr = new Array(cnt).fill(0);
-  const angles = arr.map((v, idx) => angle * idx);
-  return angles;
-};
-
-const getCount = (arr) => {
-  const answerSet = new Set();
-  Object.keys(arr).map((key) => {
-    arr[key].forEach((val) => {
-      answerSet.add(val);
-    });
-  });
-  return answerSet.size;
-};
-
-const solve = ([startNum, endNum]) => {
-  const angles = {};
-  for (let i = startNum; i <= endNum; i += 1) {
-    const angleI = getFloat(360 / i);
-    for (let j = i; j <= endNum; j += 1) {
-      const angleJ = getFloat(360 / j);
-      const remainder = uclid(angleI, angleJ);
-      if (remainder === angleJ) {
-        if (angles[angleI]) delete angles[angleI];
-        angles[angleJ] = getAngles(angleJ);
+const solve = (s, e) => {
+  let answer = 0;
+  const visit = Array.from(Array(2001), () => Array(2001).fill(0));
+  for (let i = s; i <= e; i += 1) {
+    for (let j = 1; j <= i; j += 1) {
+      const GCD = gcd(i, j);
+      if (visit[j / GCD][i / GCD] === 0) {
+        visit[j / GCD][i / GCD] = 1;
+        answer += 1;
       }
     }
   }
-  return getCount(angles);
+  return answer;
 };
 
-const inputData = () => {
+const input = () => {
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
   });
 
   rl.on("line", (line) => {
-    const inputNums = line.split(" ").map((num) => +num);
-    const answer = solve(inputNums);
+    const [s, e] = line.split(" ").map((el) => +el);
+    const answer = solve(s, e);
     console.log(answer);
     rl.close();
-  }).on("close", () => {
-    process.exit();
-  });
+  }).on("close", () => process.exit());
 };
 
-inputData();
+input();
