@@ -11,6 +11,7 @@ module.exports = {
   rules: {
     "no-console": 0,
     "array-callback-return": 0,
+    "no-continue": 0,
     "linebreak-style": ["error", OS.EOL === "\r\n" ? "windows" : "unix"],
     "prettier/prettier": ["error", { endOfLine: "auto" }],
   },
