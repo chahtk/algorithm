@@ -11,6 +11,7 @@ module.exports = {
   rules: {
     "prefer-const": 0,
     "no-console": 0,
+    "consistent-return": 0,
     "no-unused-vars": 0,
     "no-param-reassign": 0,
     "no-constant-condition": 0,
