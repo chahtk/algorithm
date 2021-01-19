@@ -10,6 +10,7 @@ module.exports = {
   extends: ["airbnb-base", "plugin:prettier/recommended"],
   rules: {
     "prefer-const": 0,
+    "prefer-destructuring": 0,
     "no-console": 0,
     "consistent-return": 0,
     "no-unused-vars": 0,
