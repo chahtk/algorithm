@@ -1,9 +1,9 @@
-const readline = require("readline");
+const readline = require('readline');
 
 const solve = (T) => {
   const buttons = [300, 60, 10];
   let t = T;
-  let result = "";
+  let result = '';
 
   buttons.map((btn) => {
     result += `${Math.floor(t / btn)} `;
@@ -19,12 +19,12 @@ const inputData = () => {
     output: process.stdout,
   });
 
-  rl.on("line", (line) => {
+  rl.on('line', (line) => {
     const T = +line;
     const answer = solve(T);
     console.log(answer);
     rl.close();
-  }).on("close", () => {
+  }).on('close', () => {
     process.exit();
   });
 };
