@@ -32,6 +32,12 @@ const getFloat = (num) => {
 };
 ```
 
+### 벨만포드
+relax 하는 과정에서 가중치가 음수임을 고려하여 이전 노드 비용이 INF인지 체크해야함
+```js
+if (dist[s] !== INF && dist[e] > dist[s] + t)
+```
+
 ## Python
 
 ### 프롬프트 입출력
