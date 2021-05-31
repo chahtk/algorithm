@@ -21,7 +21,7 @@ rl.on('line', (line) => {
 
 ### 이차원 배열
 ```js
-const arr1 = Array.from(Array(5), () => new Array(2)
+const arr1 = Array.from(Array(5), () => new Array(2))
 const arr2 = Array.from(Array(5), () => Array(2).fill(1))
 ```
 
